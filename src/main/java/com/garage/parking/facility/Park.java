@@ -31,10 +31,10 @@ class Park<T> {
 
     /**
      *
-     * look at the park and try to find a space for vehicle. if find reserve the slots. Not reserve one more slot to leave a blank space.
+     * look at the park and try to find a space for vehicle. if you find any space nearest the entrance, reserve the slots. Note: reserve one more slot to leave a blank space.
      * @param size size of the vehicle
-     *             Park do not know anything about vehicle, so integer should be here.
-     * @return Slot that reserved and updated inner vehicle model.
+     *             Park do not know anything about vehicle, so integer should be used here.
+     * @return Slot reserved slot. Also updates vehicle model in Slot
      */
     Optional<Slot<T>> tryReserve(Integer size) {
         Integer spaceCounter = size + 1; //(size + 1) means always reserve vehicle's right slot
