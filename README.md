@@ -2,7 +2,8 @@
 
 
 A parking application that manages automatically a parking facility.
-Garage
+
+
 We have a parking lot that can be parked up to 10 slots (you can consider each slot is 1 unit range) at any given point in time. 
 
 Created an automated ticketing system that allows customers to use the parking lot without human intervention. 
@@ -14,8 +15,8 @@ The ticket issuing process includes us documenting the plate and the colour of t
 When a vehicle holds number of slots with its own width, the application leaves 1 unit slot to next one. 
 
 The customer should be allocated slot(s) which is nearest to the entry. 
-A
-t the exit the customer returns the ticket which then marks slot(s) they were using as being available. 
+
+At the exit the customer returns the ticket which then marks slot(s) they were using as being available. 
 
 The Project was created using Spring Boot.
 
