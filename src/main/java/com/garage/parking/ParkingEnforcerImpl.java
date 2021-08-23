@@ -25,10 +25,6 @@ public class ParkingEnforcerImpl implements ParkingEnforcer {
         this.parkingFacility = parkingFacility;
         this.ticketService = ticketService;
     }
-    @ExceptionHandler
-    public ResponseEntity ex(ParkIsFullException ex) {
-        return ResponseEntity.status(HttpStatus.OK).build();
-    }
 
     @Override
     public String reserve(Vehicle vehicle) {
