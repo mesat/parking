@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ParkTest {
 
-    Park<Vehicle> park;
+    private Park<Vehicle> park;
     @BeforeEach
     void setUp() {
         park = new Park<>(10);

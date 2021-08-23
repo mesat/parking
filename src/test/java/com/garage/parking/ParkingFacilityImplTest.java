@@ -10,13 +10,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ParkingFacilityImplTest {
 
-    ParkingFacility parkingFacility;
-    Vehicle vehicle;
-    Vehicle vehicle2;
-    Vehicle vehicle3;
-    Vehicle vehicle4;
-    Vehicle vehicle5;
-    Vehicle vehicle6;
+    private ParkingFacility parkingFacility;
+    private Vehicle vehicle;
+    private Vehicle vehicle2;
+    private Vehicle vehicle3;
+    private Vehicle vehicle4;
+    private Vehicle vehicle5;
+    private Vehicle vehicle6;
     @BeforeEach
     void setUp() {
         parkingFacility = new ParkingFacilityImpl(10);

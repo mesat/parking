@@ -22,14 +22,14 @@ import java.security.Key;
 @Component
 public class JwtTicketService implements TicketService {
     @Value("${jwtSecret}")
-    private String JWTSECRET;
+    private String jwtSecret;
     private Gson gson = new Gson();
 
     @Override
     public String generateToken(Vehicle vehicle) {
 
-        Key key = Keys.hmacShaKeyFor(JWTSECRET.getBytes());
-        return Jwts.builder().serializeToJsonWith(new GsonSerializer(gson))
+        Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
+        return Jwts.builder().serializeToJsonWith(new GsonSerializer<>(gson))
                 .claim(Vehicle.PLATE_NUMBER_FIELD, vehicle.getPlateNumber())
                 .claim(Vehicle.COLOUR_FIELD, vehicle.getColour())
                 .claim(Vehicle.TYPE_FIELD, vehicle.getType())
@@ -39,9 +39,9 @@ public class JwtTicketService implements TicketService {
 
     @Override
     public Vehicle parseToken(String ticket) {
-        byte[] secretBytes = JWTSECRET.getBytes();
+        byte[] secretBytes = jwtSecret.getBytes();
 
-        Jws<Claims> jwsClaims = Jwts.parserBuilder().deserializeJsonWith(new GsonDeserializer(gson))
+        Jws<Claims> jwsClaims = Jwts.parserBuilder().deserializeJsonWith(new GsonDeserializer<>(gson))
                 .setSigningKey(secretBytes)
                 .build()
                 .parseClaimsJws(ticket);

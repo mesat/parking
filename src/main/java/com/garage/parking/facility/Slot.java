@@ -13,9 +13,12 @@ class Slot<T> {
      * Although the slot is empty, it may not be reservable.
      */
     private boolean reservable = true;
+    /**
+     * If the slot contains an object it keeps its reference. An object may take up more than 1 slot. In these situations keeps the reference only for starting point.
+     */
     private T object;
 
-    public boolean getEmty() {
+    boolean getEmty() {
         return empty;
     }
 

@@ -68,7 +68,7 @@ public class ParkingController {
     }
 
     @ExceptionHandler
-    public ResponseEntity commonHandler(RuntimeException ex) {
+    public ResponseEntity<String> commonHandler(RuntimeException ex) {
         return ResponseEntity.status(HttpStatus.OK).body(ex.toString() + " " + ex.getMessage());
     }
 }

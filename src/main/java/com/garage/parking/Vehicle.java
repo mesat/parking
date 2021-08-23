@@ -24,9 +24,9 @@ public class Vehicle implements Serializable {
     private Type type;
 
     /**
-     * @param plateNumber
-     * @param colour
-     * @param type
+     * @param plateNumber Vehicles ID
+     * @param colour Colour of the vehicle
+     * @param type type of the Vehicle
      */
     public Vehicle(String plateNumber, String colour, Type type) {
         this.plateNumber = plateNumber;
@@ -59,6 +59,11 @@ public class Vehicle implements Serializable {
             return false;
         }
         return this.plateNumber.equals(((Vehicle) obj).plateNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 
     @Override

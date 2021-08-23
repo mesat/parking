@@ -14,7 +14,7 @@ public class VehicleStatus implements Serializable {
     private Vehicle vehicle;
     private Status status;
 
-    public VehicleStatus(Vehicle vehicle, Status status) {
+    VehicleStatus(Vehicle vehicle, Status status) {
         this.setVehicle(vehicle);
         this.setStatus(status);
     }
@@ -31,7 +31,7 @@ public class VehicleStatus implements Serializable {
         return status;
     }
 
-    public void setStatus(Status status) {
+    private void setStatus(Status status) {
         this.status = status;
     }
 
